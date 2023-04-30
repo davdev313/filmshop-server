@@ -1,0 +1,9 @@
+{
+	"getAllFilms": "SELECT * FROM film WHERE Id != ''",
+	"getCart": "SELECT cart.Id as CartId, cart.FilmId, cart.Quantity as QuantityInCart, film.Id, film.Name, film.ImageUrl, film.Quantity as FilmQuantity, film.Price FROM cart JOIN film ON film.Id = cart.FilmId WHERE cart.Id != ''",
+	"insertToCart": "INSERT INTO cart (`FilmId`, `Quantity`) VALUES (?)",
+	"updateFilm": "UPDATE film SET Quantity = ? WHERE Id = ?",
+	"updateCart": "UPDATE cart SET Quantity = ? WHERE FilmId = ?",
+	"removeFromCart": "DELETE FROM cart WHERE FilmId = ?",
+	"removeAllFromCart": "DELETE FROM cart"
+}
